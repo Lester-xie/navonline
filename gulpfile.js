@@ -12,5 +12,11 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    mix
+        .sass('app.scss')
+        .sass('user-index.scss')
+        .sass('user-edit.scss')
+        .sass('login.scss')
+        .browserify('app.js')
+        .browserify('user-edit.js');
 });

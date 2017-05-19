@@ -1,0 +1,66 @@
+.u-edit {
+  padding: 35px !important;
+  position: relative; }
+
+.u-edit .edit-menu a {
+  font-size: 15px; }
+
+.u-edit .edit-menu a.active {
+  color: #21BA45 !important; }
+
+.u-edit .edit-wrap .item {
+  padding: 20px 0 !important;
+  border-bottom: 1px solid rgba(34, 36, 38, 0.15);
+  font-size: 15px;
+  color: #333; }
+
+.u-edit .edit-wrap .item:last-child {
+  border-bottom: none; }
+
+.u-edit .head-icon {
+  width: 150px !important;
+  height: 150px !important; }
+
+.u-edit .head-wrap {
+  width: 150px !important; }
+
+.u-edit .user-name {
+  position: relative;
+  top: 10px; }
+
+.u-edit .green {
+  color: #21BA45 !important; }
+
+.u-edit .phone:hover a,
+.u-edit .email:hover a {
+  display: inline-block !important; }
+
+textarea {
+  resize: none !important; }
+
+textarea:focus {
+  border-color: #21BA45 !important; }
+
+.u-edit .message-setting {
+  padding: 30px; }
+
+.ui.toggle.checkbox input:focus:checked ~ .box:before, .ui.toggle.checkbox input:focus:checked ~ label:before {
+  background-color: #21BA45 !important; }
+
+.ui.toggle.checkbox input:checked ~ .box:before, .ui.toggle.checkbox input:checked ~ label:before {
+  background-color: #21BA45 !important; }
+
+.ui.toggle.checkbox input:checked ~ .box:before, .ui.toggle.checkbox input:checked ~ label:before {
+  background-color: #21BA45 !important; }
+
+.u-edit .message-img {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  height: 186px; }
+
+.u-edit .small-title {
+  color: #777 !important;
+  font-size: 14px !important; }
+
+/*# sourceMappingURL=user-edit.css.map */

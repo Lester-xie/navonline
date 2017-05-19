@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+get('/', 'HomeController@home')->name('home');
+
+//注册页面
+get('signup', 'UsersController@create')->name('signup');
+
+//登录页面
+get('login', 'SessionController@create')->name('login');
+
+//用户页面
+//resource('users', 'UsersController');

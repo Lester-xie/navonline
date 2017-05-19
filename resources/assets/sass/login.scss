@@ -1,0 +1,63 @@
+$mainColor:#1aad19;
+.login-title {
+  color: $mainColor;
+  font-size: 60px;
+}
+
+.login-type {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.login-type a {
+  color: #555;
+  display: inline-block;
+  line-height: 60px;
+  position: relative;
+}
+
+.login-type a:not(.active):hover {
+  color: #555;
+}
+
+.login-type a:nth-child(1) {
+  margin-right: 30px;
+}
+
+.login-type a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #555;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.login-type a.active {
+  color: $mainColor;
+}
+
+.login-type a.active:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: $mainColor;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  visibility: visible;
+}
+
+.login-type a:hover:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  visibility: visible;
+}
