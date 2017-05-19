@@ -25,7 +25,7 @@
                     @elseif((Auth::user()->is_sx_total+Auth::user()->is_pl_total+Auth::user()->is_dz_total+Auth::user()->is_sc_total)>99)
                         <span class="tip-number">..</span>
                     @endif
-                    <div class="menu">
+                    <div class="menu" style="border-radius:0;">
                         <div class="item">
                             私信
                             @if(Auth::user()->is_sx_total>0)
@@ -54,7 +54,7 @@
                 </div>
                 <div class="ui dropdown" id="userInfo" data-uid="{{ Auth::user()->id }}" data-uname="{{ Auth::user()->name }}">
                     <img src="{{ Auth::user()->head_src?:'/img/default.png' }}" class="head-img"> <i class="dropdown icon"></i>
-                    <div class="menu">
+                    <div class="menu" style="border-radius:0;">
                         <a class="item" href="{{ route('users.show', Auth::user()->id) }}">我的主页</a>
                         <div class="item">我的收藏</div>
                         <div class="item">浏览记录</div>
