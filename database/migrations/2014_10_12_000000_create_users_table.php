@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
             $table->bigInteger('is_pl_total')->default(0);
             $table->bigInteger('is_dz_total')->default(0);
             $table->bigInteger('is_sc_total')->default(0);
-//            $table->string('intro', 60);
+            $table->string('intro', 60);
 //            $table->string('head_src', 100)->nullable();
             $table->rememberToken();
             $table->timestamps();
