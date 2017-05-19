@@ -26,10 +26,10 @@ class CreateUsersTable extends Migration
 //            $table->integer('can_sx')->default(1);
 //            $table->integer('can_pl')->default(1);
 //            $table->integer('can_at')->default(1);
-            $table->bigInteger('is_sx_total')->default(0);
-            $table->bigInteger('is_pl_total')->default(0);
-            $table->bigInteger('is_dz_total')->default(0);
-            $table->bigInteger('is_sc_total')->default(0);
+//            $table->bigInteger('is_sx_total')->default(0);
+//            $table->bigInteger('is_pl_total')->default(0);
+//            $table->bigInteger('is_dz_total')->default(0);
+//            $table->bigInteger('is_sc_total')->default(0);
             $table->string('intro', 60);
             $table->string('head_src', 100)->nullable();
             $table->rememberToken();
