@@ -47,20 +47,25 @@
                             <a href="{{ route('users.show', $item->author_id) }}" class="inline pull-left">
                                 <img src="{{ $item->author_img?:'/img/default.png' }}" class="head-img">
                             </a>
-                            <a href="{{ route('users.show', $item->author_id) }}" class="block pull-left margin-l20 article-author">{{ $item->author_name }}</a>
+                            <a href="{{ route('users.show', $item->author_id) }}"
+                               class="block pull-left margin-l20 article-author">{{ $item->author_name }}</a>
                             <br>
                             <button class="ui button basic green pull-left mini margin-l20 margin-t10">+ 关注</button>
                         </div>
-                        <div class="ten wide column">
-                            <a href=""><p>{{ $item->abstract }}</p></a>
-                            <div class="margin-t20">
-                                <a href=""><i class="icon unhide"></i>{{ $item->be_see }}</a>
-                                <a href="" class="margin-l20"><i class="icon comment outline"></i>{{ $item->be_pl }}</a>
-                                <a href="" class="margin-l20"><i class="icon heart outline"></i>{{ $item->be_dz }}</a>
+                        <div style="margin-top:-20px;" class="row">
+                            <div class="ten wide column">
+                                <a href=""><p>{{ $item->abstract }}</p></a>
+                                <div class="margin-t20">
+                                    <a href=""><i class="icon unhide"></i>{{ $item->be_see }}</a>
+                                    <a href="" class="margin-l20"><i class="icon comment outline"></i>{{ $item->be_pl }}
+                                    </a>
+                                    <a href="" class="margin-l20"><i class="icon heart outline"></i>{{ $item->be_dz }}
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="six wide column">
-                            <a href=""><img src="{{ $item->article_img }}" class="article-img"></a>
+                            <div class="six wide column">
+                                <a href=""><img src="{{ $item->article_img }}" class="article-img"></a>
+                            </div>
                         </div>
                     </div>
                     <div class="ui divider"></div>
