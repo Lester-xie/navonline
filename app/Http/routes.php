@@ -33,3 +33,5 @@ get('users/{id}/edit/privacy','UsersController@privacy')->name('users.edit.priva
 patch('users/{id}/edit/message/setting',"UsersController@messageSet");
 //隐私设置请求
 patch('users/{id}/edit/privacy/setting',"UsersController@privacySet");
+
+get('adddata','HomeController@addData');
