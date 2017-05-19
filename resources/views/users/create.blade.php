@@ -20,27 +20,27 @@
                 </div>
                 <form class="ui large form" action="{{ route('users.store') }}" method="post">
                     {{ csrf_field() }}
-                    <div class="ui stacked segment">
-                        <div class="field">
-                            <div class="ui left icon input">
-                                <i class="user icon"></i>
-                                <input type="text" name="name" placeholder="昵称" value="{{old('name')}}" maxlength="12">
+                    <div class="signup-wrap">
+                        <div>
+                            <div class="ui left icon input input-item">
+                            <i class="user icon"></i>
+                            <input type="text" name="name" placeholder="昵称" value="{{old('name')}}" maxlength="12" class="inline">
                             </div>
                         </div>
-                        <div class="field">
-                            <div class="ui left icon input">
-                                <i class="tablet icon"></i>
-                                <input type="text" name="phone" placeholder="手机号" value="{{old('phone')}}" maxlength="11">
+                        <div>
+                            <div class="ui left icon input input-item ">
+                            <i class="tablet icon"></i>
+                            <input type="text" name="phone" placeholder="手机号" value="{{old('phone')}}" maxlength="11" class="inline">
                             </div>
                         </div>
-                        <div class="field">
-                            <div class="ui left icon input">
-                                <i class="lock icon"></i>
-                                <input type="password" name="password" placeholder="密码" value="{{old('password')}}" maxlength="20">
+                        <div>
+                            <div class="ui left icon input input-item last-item ">
+                            <i class="lock icon"></i>
+                            <input type="password" name="password" placeholder="密码" value="{{old('password')}}" maxlength="20" class="inline">
                             </div>
                         </div>
-                        <button class="ui fluid large submit positive button" type="submit">登录</button>
                     </div>
+                    <button class="ui fluid small submit positive button margin-t20" type="submit">注册</button>
                 </form>
             </div>
         </div>

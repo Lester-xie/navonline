@@ -20,27 +20,21 @@
                 </div>
                 <form class="ui large form" action="{{ route('login') }}" method="post">
                     {{ csrf_field() }}
-                    <div class="ui stacked segment">
-                        <div class="field">
-                            <div class="ui left icon input">
-                                <i class="tablet icon"></i>
-                                <input type="text" name="account" placeholder="手机号或邮箱" value="{{old('account')}}">
+                    <div class="signup-wrap">
+                        <div>
+                            <div class="ui left icon input input-item">
+                                <i class="user icon"></i>
+                                <input type="text" name="account" placeholder="手机号或邮箱" value="{{old('account')}}" maxlength="20" class="inline">
                             </div>
                         </div>
-                        <div class="field">
-                            <div class="ui left icon input">
+                        <div>
+                            <div class="ui left icon input input-item last-item ">
                                 <i class="lock icon"></i>
-                                <input type="password" name="password" placeholder="密码">
+                                <input type="password" name="password" placeholder="密码" value="{{old('password')}}" maxlength="20" class="inline">
                             </div>
                         </div>
-                        <div class="ui field text-left">
-                            <div class="ui checkbox checked" >
-                                <input type="checkbox" name="remember" checked="">
-                                <label>记住我</label>
-                            </div>
-                        </div>
-                        <button class="ui fluid large submit positive button">登录</button>
                     </div>
+                    <button class="ui fluid small submit positive button margin-t20" type="submit">登录</button>
                 </form>
             </div>
         </div>

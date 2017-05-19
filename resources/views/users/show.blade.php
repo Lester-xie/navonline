@@ -7,20 +7,20 @@
     <div class="ui grid">
         <div class="twelve wide column u-index">
             <div class="inline pull-left">
-                <img src="{{ Auth::user()->head_src?Auth::user()->head_src:'/img/default.png' }}" class="head-icon">
+                <img src="{{ $user->head_src?:'/img/default.png' }}" class="head-icon">
             </div>
             <div class="block pull-left margin-l20">
                 <a href="{{ route('users.show', $user->id) }}" class="username inline margin-b20">{{ $user->name }}</a>
-                @if ($user->id != Auth::user()->id)
+                @if (Auth::check() && $user->id == Auth::user()->id)
+                    <div class="ui margin-l20 inline edit-user">
+                        <a href="{{ route('users.edit.profile', $user->id) }}" class="ui button basic green"><i class="icon edit"></i>编辑个人资料</a>
+                    </div>
+                @else
                     <div class="ui labeled button margin-l20 inline ">
                         <button class="ui button basic green"><i class="heart icon"></i> + 关注</button>
                         <a class="ui basic green label">
                             <i class="icon mail outline"></i>私信
                         </a>
-                    </div>
-                @else
-                    <div class="ui margin-l20 inline edit-user">
-                        <a href="{{ route('users.edit.profile', $user->id) }}" class="ui button basic green"><i class="icon edit"></i>编辑个人资料</a>
                     </div>
                 @endif
                 <br>

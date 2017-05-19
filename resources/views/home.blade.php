@@ -44,10 +44,10 @@
                             <h3 class="article-title"><a href="">{{ $item->title }}</a></h3>
                         </div>
                         <div class="six wide column">
-                            <a href="" class="inline pull-left">
+                            <a href="{{ route('users.show', $item->author_id) }}" class="inline pull-left">
                                 <img src="{{ $item->author_img?:'/img/default.png' }}" class="head-img">
                             </a>
-                            <a href="" class="block pull-left margin-l20 article-author">{{ $item->author_name }}</a>
+                            <a href="{{ route('users.show', $item->author_id) }}" class="block pull-left margin-l20 article-author">{{ $item->author_name }}</a>
                             <br>
                             <button class="ui button basic green pull-left mini margin-l20 margin-t10">+ 关注</button>
                         </div>
