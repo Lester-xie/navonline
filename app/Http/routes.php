@@ -16,8 +16,15 @@ get('/', 'HomeController@home')->name('home');
 //注册页面
 get('signup', 'UsersController@create')->name('signup');
 
-//登录页面
+//登入、登出页面
 get('login', 'SessionController@create')->name('login');
+post('login', 'SessionController@store')->name('login');
+delete('logout', 'SessionController@destroy')->name('logout');
 
 //用户页面
-//resource('users', 'UsersController');
+resource('users', 'UsersController');
+
+get('users/{id}/edit/profile','UsersController@profile')->name('users.edit.profile');
+get('users/{id}/edit/message','UsersController@message')->name('users.edit.message');
+get('users/{id}/edit/privacy','UsersController@privacy')->name('users.edit.privacy');
+

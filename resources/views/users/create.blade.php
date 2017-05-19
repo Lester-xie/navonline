@@ -18,8 +18,7 @@
                     <a href="{{ route('signup') }}" class="active">注册</a>
                     <a href="{{ route('login') }}">登录</a>
                 </div>
-                {{--<form class="ui large form" action="{{ route('users.store') }}" method="post">--}}
-                <form class="ui large form" action="" method="post">
+                <form class="ui large form" action="{{ route('users.store') }}" method="post">
                     {{ csrf_field() }}
                     <div class="ui stacked segment">
                         <div class="field">

@@ -13,6 +13,8 @@ return [
     |
     */
 
+    'locale' => 'zh-CN',
+
     'debug' => env('APP_DEBUG', false),
 
     /*
