@@ -28,3 +28,8 @@ get('users/{id}/edit/profile','UsersController@profile')->name('users.edit.profi
 get('users/{id}/edit/message','UsersController@message')->name('users.edit.message');
 get('users/{id}/edit/privacy','UsersController@privacy')->name('users.edit.privacy');
 
+
+//消息推送请求
+patch('users/{id}/edit/message/setting',"UsersController@messageSet");
+//隐私设置请求
+patch('users/{id}/edit/privacy/setting',"UsersController@privacySet");
