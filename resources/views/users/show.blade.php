@@ -24,7 +24,7 @@
                     </div>
                 @endif
                 <br>
-                <p class="intro">爱写书的手艺人</p>
+                <p class="intro">{{ $user->intro }}</p>
                 <a class="ui labeled button" tabindex="0">
                     <div class="ui gray basic button"> 关注</div>
                     <div class="ui basic left pointing gray label">
