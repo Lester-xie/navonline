@@ -2,12 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use App\Models\Article;
-use App\Models\User;
+use Storage;
 
 class HomeController extends Controller
 {
@@ -16,8 +12,10 @@ class HomeController extends Controller
         $articles = Article::all();
         return view('home', compact('articles'));
     }
+
     public function addData()
     {
+        Storage::disk('local')->put('file.txt', 'Contents');
         $articles = Article::create([
             'title' => '丝巾',
             'abstract' => '他在你的时间的对面。棣棠、风信子、黄桷兰、天堂鸟、燕尾兰、青水仙、樱、大叶菊、迷迭香、睡莲、六月雪、白掌…月田的12个闺蜜从各地赶来，悉数到场。安静的花店被13个姑娘吵翻了天...',
@@ -41,5 +39,27 @@ class HomeController extends Controller
             'be_see' => '610'
         ]);
         return redirect()->route('home');
+    }
+
+    public function getSign()
+    {
+        $appid = "1252873427";
+        $bucket = "nav";
+        $secret_id = "AKIDhEXaNtw8rJbcQ0mN9fvvfAPN5Xjfrjtn";
+        $secret_key = "mJcgaFgrnSs2way6xc2D8tQkocASUHp8";
+        $expired = time() + 2592000;
+        $current = time();
+        $rdm = rand();
+        $href = 'http://nav-1252873427.file.myqcloud.com';
+
+        $multi_effect_signature = 'a=' . $appid . '&b=' . $bucket . '&k=' . $secret_id . '&e=' . $expired . '&t=' . $current . '&r=' . $rdm . '&f=';
+        $multi_effect_signature = base64_encode(hash_hmac('SHA1', $multi_effect_signature, $secret_key, true) . $multi_effect_signature);
+
+        return array('sign' => $multi_effect_signature, 'url' => $href);
+    }
+
+    public function getSign1()
+    {
+        return view('home1');
     }
 }
