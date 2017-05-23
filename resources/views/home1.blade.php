@@ -120,7 +120,7 @@
     function initUploadForm() {
         // 请将以下获取签名的链接换成您部署好的服务端http url
         // 建议通过业务登陆态检查来增强安全性，避免签名被非法获取
-        $.getJSON('https://navonline.app/getsign', function (data) {
+        $.getJSON('/getsign', function (data) {
             var file = $('[name="filecontent"]').val();
             var fileName = file.substring(file.lastIndexOf('\\') + 1);
             var sign = data.sign,
