@@ -44,13 +44,13 @@ class HomeController extends Controller
     public function getSign()
     {
         $appid = "1252873427";
-        $bucket = "nav";
+        $bucket = "navcd";
         $secret_id = "AKIDhEXaNtw8rJbcQ0mN9fvvfAPN5Xjfrjtn";
         $secret_key = "mJcgaFgrnSs2way6xc2D8tQkocASUHp8";
         $expired = time() + 2592000;
         $current = time();
         $rdm = rand();
-        $href = 'http://nav-1252873427.file.myqcloud.com';
+        $href = 'http://gz.file.myqcloud.com';
 
         $multi_effect_signature = 'a=' . $appid . '&b=' . $bucket . '&k=' . $secret_id . '&e=' . $expired . '&t=' . $current . '&r=' . $rdm . '&f=';
         $multi_effect_signature = base64_encode(hash_hmac('SHA1', $multi_effect_signature, $secret_key, true) . $multi_effect_signature);

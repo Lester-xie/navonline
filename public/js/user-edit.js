@@ -69,6 +69,39 @@
             }
         });
     });
+
+    // 上传图片
+    $(document).on('click', '.j-upload', function () {
+        $('[name="filecontent"]').click();
+    });
+    $('[name="filecontent"]').change(function () {
+        $.getJSON('/getsign', function (data) {
+            var file = $('[name="filecontent"]').val();
+            var fileName = file.substring(file.lastIndexOf('\\') + 1);
+            var sign = data.sign,
+                url = data.url + '/files/v2/1252873427/navcd/head_img/' + fileName;
+            console.log(url);
+            var options = {
+                type: 'post',
+                url: url,
+                dataType: 'json',
+                contentType: "multipart/form-data",
+                beforeSend: function beforeSend(xhr) {
+                    xhr.setRequestHeader('Authorization', sign);
+                },
+                success: function success(ret) {
+                    $('[name="head_src"]').val(ret.data.access_url);
+                    $('.head-icon').attr('src', ret.data.access_url);
+                },
+                error: function error(ret) {
+                    alert(ret.responseText);
+                }
+            };
+
+            // pass options to ajaxForm
+            $('#uploadForm').ajaxSubmit(options);
+        });
+    });
 })(jQuery);
 
 },{}]},{},[1]);

@@ -35,5 +35,5 @@ patch('users/{id}/edit/privacy/setting',"UsersController@privacySet");
 
 get('adddata','HomeController@addData');
 
+//获取万象图库的签名
 get('getsign','HomeController@getSign');
-get('getsign1','HomeController@getSign1');

@@ -13,6 +13,11 @@
             </div>
         </div>
         <div class="twelve wide column edit-menu-wrap">
+            <form id="uploadForm" class="hide">
+                <input type="text" name="op" value="upload">
+                <input type="text" name="insertOnly" value="0">
+                <input type="file" name="filecontent"/>
+            </form>
             <form method="POST" action="{{ route('users.update', $user->id )}}">
                 {{ method_field('PATCH') }}
                 {{ csrf_field() }}
@@ -24,7 +29,7 @@
                                     <div class="ui dimmer">
                                         <div class="content">
                                             <div class="center">
-                                                <div class="ui inverted button">上传头像</div>
+                                                <div class="ui inverted button j-upload">上传头像</div>
                                             </div>
                                         </div>
                                     </div>
@@ -139,5 +144,6 @@
 @stop
 
 @section('js')
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery.form/4.0.0/jquery.form.min.js"></script>
     <script src="/js/user-edit.js"></script>
 @stop
